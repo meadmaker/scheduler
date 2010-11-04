@@ -1,0 +1,34 @@
+<h1>Listing presentations</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Start</th>
+    <th>Stop</th>
+    <th>Event</th>
+    <th>Location</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @presentations.each do |presentation| %>
+  <% Rails.logger.error "Presentation #{presentation.id} - #{presentation.name}" %>
+  <tr>
+    <td><%= presentation.name %></td>
+    <td><%= presentation.description %></td>
+    <td><%= presentation.start %></td>
+    <td><%= presentation.stop %></td>
+    <td><%= presentation.event.name %></td>
+    <td><%= presentation.location_id %></td>
+    <td><%= link_to 'Show', presentation %></td>
+    <td><%= link_to 'Edit', edit_presentation_path(presentation) %></td>
+    <td><%= link_to 'Destroy', presentation, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Presentation', new_presentation_path %>
