@@ -1,3 +1,4 @@
+puts "Warning:  If this import fails on Windows, run 'chcp 1252' and try again."
 puts "one #{Time.now.to_s}"
 require File.expand_path('../../config/environment', __FILE__)
 puts "two #{Time.now.to_s}"
