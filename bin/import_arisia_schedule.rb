@@ -43,18 +43,17 @@ Slot.destroy_all
 
 puts "Deleted all presentations and slots."
 
-puts "five #{Time.now.to_s}"
-
 f = open(ARGV[1], "r:ISO-8859-1")
 text = f.read()
 
-limit = 20
+limit = ARGV[2].nil? ? 0 : ARGV[2].to_i
 
 CSV.parse(text, {:headers => true}) do |row|
-  limit = limit - 1
-  exit if limit < 1
-  
   next if row['title'].nil?
+
+  limit = limit - 1
+  exit if limit == 0
+  
   puts "Creating presentation: #{row['title']} (#{event.name})"
   
   p = Presentation.create(:name => row['title'],
