@@ -1,0 +1,2 @@
+class Audience < Attendee
+end

@@ -10,12 +10,32 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101030011727) do
+ActiveRecord::Schema.define(:version => 20101113162412) do
+
+# Could not dump table "attendees" because of following ArgumentError
+#   invalid date
+
+# Could not dump table "categories" because of following ArgumentError
+#   invalid date
+
+  create_table "categories_presentations", :id => false, :force => true do |t|
+    t.integer "category_id"
+    t.integer "presentation_id"
+  end
 
 # Could not dump table "events" because of following ArgumentError
 #   invalid date
 
+# Could not dump table "locations" because of following ArgumentError
+#   invalid date
+
+# Could not dump table "people" because of following ArgumentError
+#   invalid date
+
 # Could not dump table "presentations" because of following ArgumentError
+#   invalid date
+
+# Could not dump table "slots" because of following ArgumentError
 #   invalid date
 
 end

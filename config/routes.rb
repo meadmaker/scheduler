@@ -1,4 +1,12 @@
 Scheduler::Application.routes.draw do
+  resources :people
+
+  resources :categories
+
+  resources :slots
+
+  resources :locations
+
   resources :presentations
 
   resources :events
