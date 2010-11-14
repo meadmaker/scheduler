@@ -33,6 +33,11 @@ end
 
 
 event = Event.where("name = ?", ARGV[0]).first
+if event.nil?
+  puts "Could not find event: [#{ARGV[0]}]"
+  puts "Usage: import_arisia_schedule.rb <event name> <CSV file> [<CSV lines to read>]"
+  exit
+end
 puts "Got event: #{event.name}"
 
 #puts "four #{Time.now.to_s}"
