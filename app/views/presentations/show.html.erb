@@ -1,35 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
+<p> 
+  <b>Name:</b> 
   <%= @presentation.name %>
-</p>
-
-<p>
-  <b>Description:</b>
+</p> 
+ 
+<p> 
+  <b>Description:</b> 
   <%= @presentation.description %>
-</p>
-
-<p>
-  <b>Start:</b>
-  <%= @presentation.start %>
-</p>
-
-<p>
-  <b>Stop:</b>
-  <%= @presentation.stop %>
-</p>
-
-<p>
-  <b>Event:</b>
-  <%= @presentation.event_id %>
-</p>
-
-<p>
-  <b>Location:</b>
-  <%= @presentation.location_id %>
-</p>
-
+</p> 
+ 
 
 <%= link_to 'Edit', edit_presentation_path(@presentation) %> |
 <%= link_to 'Back', presentations_path %>
