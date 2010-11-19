@@ -1,0 +1,31 @@
+.search_container, .grouping_container, .presentation_container {
+  border: solid thin;
+  width: 25em;
+  padding: .5em;
+  display: inline-block;
+}
+
+.search_container {
+  float:left;
+}
+
+.searchby, .group, .presentation {
+  border-bottom-style:dotted;
+  border-bottom-width:thin;
+}
+
+.searchby {
+  min-height: 90px;
+}
+.search_name {
+  font-size:x-large;
+}
+
+
+.sub_quip {
+  vertical-align: text-bottom;
+}
+.image_quip {
+  float:right;
+}
+
