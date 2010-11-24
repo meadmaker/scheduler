@@ -2,7 +2,7 @@ require 'test_helper'
 
 class PresentationsControllerTest < ActionController::TestCase
   setup do
-    @presentation = presentations(:one)
+    @presentation = Factory.create :presentation
   end
 
   test "should get index" do

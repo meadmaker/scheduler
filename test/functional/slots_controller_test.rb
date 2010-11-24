@@ -2,7 +2,7 @@ require 'test_helper'
 
 class SlotsControllerTest < ActionController::TestCase
   setup do
-    @slot = slots(:one)
+    @slot = Factory.create :slot
   end
 
   test "should get index" do

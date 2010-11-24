@@ -12,30 +12,60 @@
 
 ActiveRecord::Schema.define(:version => 20101113162412) do
 
-# Could not dump table "attendees" because of following ArgumentError
-#   invalid date
+  create_table "attendees", :force => true do |t|
+    t.integer  "person_id"
+    t.integer  "slot_id"
+    t.string   "type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
-# Could not dump table "categories" because of following ArgumentError
-#   invalid date
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "categories_presentations", :id => false, :force => true do |t|
     t.integer "category_id"
     t.integer "presentation_id"
   end
 
-# Could not dump table "events" because of following ArgumentError
-#   invalid date
+  create_table "events", :force => true do |t|
+    t.string   "name"
+    t.datetime "start"
+    t.datetime "stop"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
-# Could not dump table "locations" because of following ArgumentError
-#   invalid date
+  create_table "locations", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
-# Could not dump table "people" because of following ArgumentError
-#   invalid date
+  create_table "people", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
-# Could not dump table "presentations" because of following ArgumentError
-#   invalid date
+  create_table "presentations", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.integer  "event_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
-# Could not dump table "slots" because of following ArgumentError
-#   invalid date
+  create_table "slots", :force => true do |t|
+    t.datetime "start"
+    t.datetime "stop"
+    t.integer  "location_id"
+    t.integer  "presentation_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

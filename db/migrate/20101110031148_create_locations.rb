@@ -7,7 +7,9 @@ class CreateLocations < ActiveRecord::Migration
       t.timestamps
     end
     
-    add_index :locations, :name, :unique => true
+    # the MySQL2 gem and adding indexes seems to be
+    # broken right now.  For now, ignore the unique index.
+    # add_index :locations, :name, :unique => true
   end
 
   def self.down

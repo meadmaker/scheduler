@@ -7,6 +7,12 @@ gem 'rails', '3.0.0'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'mysql2'
+gem 'mysql'
+
+group :test do
+  gem 'factory_girl_rails'
+  gem 'faker'
+end
 
 # Use unicorn as the web server
 # gem 'unicorn'

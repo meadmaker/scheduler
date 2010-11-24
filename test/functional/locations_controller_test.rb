@@ -2,7 +2,8 @@ require 'test_helper'
 
 class LocationsControllerTest < ActionController::TestCase
   setup do
-    @location = locations(:one)
+    @location = Factory.create :location
+    @unsaved_location = Factory.build :location
   end
 
   test "should get index" do
@@ -18,7 +19,7 @@ class LocationsControllerTest < ActionController::TestCase
 
   test "should create location" do
     assert_difference('Location.count') do
-      post :create, :location => @location.attributes
+      post :create, :location => @unsaved_location.attributes
     end
 
     assert_redirected_to location_path(assigns(:location))
