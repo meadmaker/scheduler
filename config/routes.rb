@@ -1,7 +1,11 @@
 Scheduler::Application.routes.draw do
-  resources :people
+  resources :people do
+    resources :slots
+  end
 
-  resources :categories
+  resources :categories do
+    resources :presentations
+  end
 
   resources :slots
 
@@ -9,7 +13,17 @@ Scheduler::Application.routes.draw do
 
   resources :presentations
 
-  resources :events
+  resources :events do
+    resources :searches
+  end
+  
+  # resources :searches do
+  #   resources :categories do
+  #     resources :presentations do
+  #       resources :slots
+  #     end
+  #   end
+  # end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

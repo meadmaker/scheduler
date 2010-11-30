@@ -3,6 +3,8 @@ require 'test_helper'
 class CategoriesControllerTest < ActionController::TestCase
   setup do
     @category = Factory.create :category
+    @category.presentations << Factory.create(:presentation)
+    @category.presentations << Factory.create(:presentation)
     @unsaved_category = Factory.build :category
   end
 

@@ -46,4 +46,9 @@ class EventsControllerTest < ActionController::TestCase
 
     assert_redirected_to events_path
   end
+  
+  test "should get event searches" do
+    get event_searches_path, :event_id => @event.to_param
+    assert_response :success
+  end
 end
