@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  respond_to :xml, :html
+  respond_to :xml, :html, :json
   
   # GET /events
   # GET /events.xml

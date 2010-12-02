@@ -2,7 +2,13 @@ class SlotsController < ApplicationController
   # GET /slots
   # GET /slots.xml
   def index
-    @slots = Slot.all
+    if (params[:presentation_id].nil?)
+      @slots = Slot.all
+    else
+      presentation = Presentation.find(params[:presentation_id])
+      @slots = presentation.slots
+    end
+       
 
     respond_to do |format|
       format.html # index.html.erb

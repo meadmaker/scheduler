@@ -11,10 +11,16 @@ Scheduler::Application.routes.draw do
 
   resources :locations
 
-  resources :presentations
+  resources :presentations do
+    resources :slots
+  end
 
   resources :events do
     resources :searches
+  end
+  
+  resources :searches do
+    resources :categories
   end
   
   # resources :searches do

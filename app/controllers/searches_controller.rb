@@ -1,5 +1,5 @@
 class SearchesController < ApplicationController
-  respond_to :xml, :html
+  respond_to :html, :xml, :json
   
   def index
     @searches = ["All"]

@@ -2,8 +2,13 @@ class PresentationsController < ApplicationController
   # GET /presentations
   # GET /presentations.xml
   def index
-    @presentations = Presentation.all
-
+    if params[:category_id].nil?
+      @presentations = Presentation.all
+    else
+      @category = Category.find(params[:category_id])
+      @presentations = @category.presentations
+    end
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @presentations }

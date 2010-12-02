@@ -10,6 +10,14 @@ class PresentationsControllerTest < ActionController::TestCase
     assert_response :success
     assert_not_nil assigns(:presentations)
   end
+  
+  test "should get index for category" do
+    second_presentation = Factory.create :presentation
+    get :index, :category_id => @presentation.categories.first.id
+    assert_response :success
+    assert_not_nil assigns(:presentations)
+    assert_equal 1, assigns(:presentations).size
+  end
 
   test "should get new" do
     get :new
