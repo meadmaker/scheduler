@@ -8,14 +8,7 @@
     <th></th>
   </tr>
 
-<% @presentations.each do |presentation| %>
-  <tr>
-    <td><%= presentation.name %></td>
-    <td><%= link_to 'Show', presentation %></td>
-    <td><%= link_to 'Edit', edit_presentation_path(presentation) %></td>
-    <td><%= link_to 'Destroy', presentation, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+<%= render :partial => 'presentation', :collection => @presentations %>
 </table>
 
 <br />

@@ -8,6 +8,7 @@ gem 'rails'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'mysql2'
 gem 'mysql'
+gem 'formtastic', '~> 1.1.0'
 
 group :test do
   gem 'factory_girl_rails'

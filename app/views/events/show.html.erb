@@ -1,3 +1,7 @@
+<% content_for :page_title do %>
+<%= @event.name %>
+<% end %>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -15,6 +19,20 @@
   <%= @event.stop %>
 </p>
 
+<div class="group_box">
+  <div class="group_box_title">Presentations:</div>
+  <div class="group_box_content">
+    <table class="datatable">
+      <tr>
+        <th>name</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <%= render :partial => 'presentations/presentation', :collection => @event.presentations%>
+    </table>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
