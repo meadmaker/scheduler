@@ -15,6 +15,7 @@ group :test do
   gem 'spork-testunit'
 end
 
+gem 'metric_fu'
 # Use unicorn as the web server
 # gem 'unicorn'
 
