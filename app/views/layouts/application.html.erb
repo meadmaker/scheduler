@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Scheduler</title>
+  <title><%= yield :page_title %> - Scheduler</title>
   <%= stylesheet_link_tag :all %>
+  <%= formtastic_stylesheet_link_tag %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>

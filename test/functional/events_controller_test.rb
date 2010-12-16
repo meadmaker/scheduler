@@ -28,6 +28,13 @@ class EventsControllerTest < ActionController::TestCase
     get :show, :id => @event.to_param
     assert_response :success
   end
+  
+  test "should show event by name or id" do
+    get :show, :id => @event.id
+    assert_response :success
+    get :show, :id => "#{@event.id}-#{@event.name}"
+    assert_response :success
+  end
 
   test "should get edit" do
     get :edit, :id => @event.to_param

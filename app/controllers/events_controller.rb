@@ -12,7 +12,7 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.xml
   def show
-    @event = Event.find(params[:id])
+    @event = find_event(params[:id])
 
     respond_with @event
   end
@@ -27,7 +27,7 @@ class EventsController < ApplicationController
 
   # GET /events/1/edit
   def edit
-    @event = Event.find(params[:id])
+    @event = find_event(params[:id])
   end
 
   # POST /events
@@ -69,5 +69,21 @@ class EventsController < ApplicationController
     @event.destroy
 
     respond_with @event
+  end
+  
+  private
+  def find_event(param)
+    # puts "==> Finding event: [#{param}]"
+    if param
+      if param.to_i > 0
+        # puts "====> An integer > 0: #{param.to_i}"
+        @event = Event.find(param)
+      else
+        # puts "====> An integer !> 0: #{param.to_i}"
+        @event = Event.find_by_name(param)
+      end
+      # puts "==> Event found: #{@event}"
+    end
+    @event
   end
 end
